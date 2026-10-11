@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Zenvora - Rekber All Game Terpercaya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            touch-action: pan-y;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100%;
+            overflow-x: hidden;
+            background-color: #0b0f19;
+            color: #1e293b;
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* ==================== PRELOADER ULTRA-FUTURISTIC ==================== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #050811;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1), visibility 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+            overflow: hidden;
+        }
+
+        #preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* Dual Ambient Neon Glows */
+        .glow-orb-1 {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, rgba(5, 8, 17, 0) 70%);
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            filter: blur(55px);
+            animation: floatOrb 5s ease-in-out infinite alternate;
+        }
+
+        .glow-orb-2 {
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            background: radial-gradient(circle, rgba(52, 211, 153, 0.15) 0%, rgba(5, 8, 17, 0) 70%);
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            filter: blur(45px);
+            animation: floatOrb2 7s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.6; }
+            100% { transform: translate(-50%, -45%) scale(1.2); opacity: 0.95; }
+        }
+
+        @keyframes floatOrb2 {
+            0% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.4; }
+            100% { transform: translate(-50%, -55%) scale(0.9); opacity: 0.8; }
+        }
+
+        /* Glassmorphism Cyber Card */
+        .loader-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 2;
+            padding: 32px 36px;
+            border-radius: 28px;
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        /* Multi-Ring Spinner Container */
+        .spinner-container {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Outer Rotating Cyber Orbit */
+        .orbit-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1.5px dashed rgba(16, 185, 129, 0.35);
+            animation: spin 10s linear infinite;
+        }
+
+        .orbit-ring::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 50%;
+            width: 7px;
+            height: 7px;
+            background: #34d399;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #34d399;
+            transform: translateX(-50%);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .spinner-svg {
+            width: 105px;
+            height: 105px;
+            transform: rotate(-90deg);
+        }
+
+        .bg-ring {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.06);
+            stroke-width: 6;
+        }
+
+        .progress-ring {
+            fill: none;
+            stroke: url(#gradientStroke);
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke-dasharray: 264;
+            stroke-dashoffset: 264;
+            transition: stroke-dashoffset 0.1s linear;
+            filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.85));
+        }
+
+        /* Center Pulsing Logo */
+        .center-logo {
+            position: absolute;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: logoPulse 2s ease-in-out infinite;
+        }
+
+        .center-logo svg {
+            width: 100%;
+            height: 100%;
+            fill: #10b981;
+            filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.7));
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(0.92); opacity: 0.85; }
+            50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 18px rgba(52, 211, 153, 0.95)); }
+        }
+
+        /* Text & Shimmer Title */
+        .brand-title {
+            margin-top: 18px;
+            font-size: 1.15rem;
+            font-weight: 900;
+            letter-spacing: 5px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .brand-subtitle {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            background: linear-gradient(90deg, #64748b, #34d399, #64748b);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: textShimmer 2.5s linear infinite;
+            margin-top: 3px;
+            text-transform: uppercase;
+        }
+
+        @keyframes textShimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* Compact Cyber Counter Badge (Persentase Ukuran Lebih Kecil & Neon Smooth) */
+        .counter-badge {
+            margin-top: 16px;
+            padding: 4px 14px;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 20px;
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+            backdrop-filter: blur(4px);
+        }
+
+        .loader-percent {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.25rem; /* Persentase lebih kecil & proporsional */
+            font-weight: 800;
+            background: linear-gradient(180deg, #ffffff 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 1px;
+            animation: glowPulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
+        }
+
+        .loader-symbol {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #34d399;
+            animation: glowPulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            0% {
+                filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.5));
+            }
+            100% {
+                filter: drop-shadow(0 0 12px rgba(52, 211, 153, 0.9));
+            }
+        }
+
+        .status-text {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            font-weight: 600;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==================== MAIN PAGE WRAPPER ANIMATION ==================== */
+        #main-wrapper {
+            background-color: #f8fafc;
+            min-height: 100vh;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #main-wrapper.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #059669;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 22px;
+            height: 22px;
+            fill: #10b981;
+        }
+
+        /* Indicator Status Admin */
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #ecfdf5;
+            color: #047857;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            border: 1px solid #a7f3d0;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            background-color: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+            animation: pulseDot 1.8s infinite;
+        }
+
+        @keyframes pulseDot {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        /* Hero Section */
+        .hero-container {
+            position: relative;
+            background: linear-gradient(135deg, #047857 0%, #10b981 100%);
+            color: white;
+            text-align: center;
+            padding: 36px 16px 64px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .animated-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .typing-text {
+            border-right: 2px solid #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: blink 0.75s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: #ffffff; }
+        }
+
+        .hero p {
+            color: #ecfdf5;
+            font-size: 0.85rem;
+            margin-bottom: 18px;
+            opacity: 0.95;
+            padding: 0 8px;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+        }
+
+        .badge svg {
+            width: 12px;
+            height: 12px;
+            fill: currentColor;
+        }
+
+        /* Wave SVG */
+        .waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            margin-bottom: -1px;
+        }
+
+        .parallax > use {
+            animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+        }
+        .parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+        .parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+        .parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+        .parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
+
+        @keyframes move-forever {
+            0% { transform: translate3d(-90px,0,0); }
+            100% { transform: translate3d(85px,0,0); }
+        }
+
+        /* Container Content */
+        .container {
+            width: 100%;
+            padding: 0 14px;
+            margin-top: -22px;
+            position: relative;
+            z-index: 3;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 18px;
+            border-radius: 16px;
+            margin-bottom: 14px;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            width: 100%;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h2 {
+            margin-bottom: 14px;
+            color: #0f172a;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+        }
+
+        .icon-title {
+            width: 18px;
+            height: 18px;
+            fill: #059669;
+        }
+
+        /* Alert Warning Box */
+        .alert-warning {
+            background-color: #fffbebf5;
+            border: 1px solid #fde68a;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 14px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .alert-icon {
+            width: 20px;
+            height: 20px;
+            fill: #d97706;
+            flex-shrink: 0;
+        }
+
+        .alert-text {
+            font-size: 0.78rem;
+            color: #92400e;
+            line-height: 1.4;
+        }
+
+        .alert-text strong {
+            color: #78350f;
+        }
+
+        /* Statistik Card */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .stat-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 12px 6px;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: #cbd5e1;
+        }
+
+        .stat-number {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #059669;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.68rem;
+            color: #64748b;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .trust-badge-box {
+            background-color: #ecfdf5;
+            border: 1px dashed #a7f3d0;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .stars {
+            color: #f59e0b;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .trust-subtext {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #047857;
+        }
+
+        /* Jam Operasional Layout */
+        .operational-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .op-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.82rem;
+            color: #334155;
+            border-bottom: 1px dashed #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        .op-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .op-day {
+            font-weight: 600;
+        }
+
+        .op-time {
+            font-weight: 700;
+            color: #059669;
+        }
+
+        /* Alur Transaksi */
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.82rem;
+            color: #334155;
+        }
+
+        .step-num {
+            background: #dcfce7;
+            color: #166534;
+            width: 24px;
+            height: 24px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #475569;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1.5px solid #e2e8f0;
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-size: 16px; 
+            outline: none;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: #10b981;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 14px;
+            background-color: #10b981;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+        }
+
+        .btn:hover {
+            background-color: #059669;
+            box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35);
+        }
+
+        .btn-secondary {
+            background-color: #f1f5f9;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+            box-shadow: none;
+            margin-top: 8px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e2e8f0;
+            box-shadow: none;
+        }
+
+        .btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .result-box {
+            margin-top: 10px;
+            padding: 12px;
+            background-color: #f0fdf4;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #15803d;
+            border: 1px dashed #86efac;
+        }
+
+        /* Tabel Fee */
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+            margin-top: 12px;
+        }
+
+        .fee-table th, .fee-table td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .fee-table th {
+            background-color: #f8fafc;
+            color: #475569;
+            font-weight: 700;
+        }
+
+        .fee-table td {
+            color: #334155;
+        }
+
+        .fee-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Accordion FAQ */
+        .faq-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 12px 14px;
+            background: #f8fafc;
+            border: none;
+            text-align: left;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #1e293b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-icon {
+            font-size: 1.1rem;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            color: #10b981;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            background: #ffffff;
+            font-size: 0.8rem;
+            color: #475569;
+            padding: 0 14px;
+        }
+
+        .faq-item.active {
+            border-color: #a7f3d0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 120px;
+            padding: 12px 14px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 16px;
+            background-color: #ffffff;
+            color: #64748b;
+            font-size: 0.75rem;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SVG Gradients Definition -->
+    <svg style="width:0;height:0;position:absolute;" aria-hidden="true">
+        <defs>
+            <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#059669" />
+                <stop offset="50%" stop-color="#10b981" />
+                <stop offset="100%" stop-color="#34d399" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <!-- PRELOADER ULTRA-FUTURISTIC & GLASSMORPHISM -->
+    <div id="preloader">
+        <div class="glow-orb-1"></div>
+        <div class="glow-orb-2"></div>
+        
+        <div class="loader-card">
+            <div class="spinner-container">
+                <div class="orbit-ring"></div>
+                <svg class="spinner-svg" viewBox="0 0 100 100">
+                    <circle class="bg-ring" cx="50" cy="50" r="42"></circle>
+                    <circle class="progress-ring" id="progressRing" cx="50" cy="50" r="42"></circle>
+                </svg>
+                <div class="center-logo">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="brand-title">ZENVORA</div>
+            <div class="brand-subtitle">Official Escrow Service</div>
+
+            <!-- Percentage Counter Badge (Persentase Lebih Kecil) -->
+            <div class="counter-badge">
+                <span class="loader-percent" id="loaderPercent">0</span>
+                <span class="loader-symbol">%</span>
+            </div>
+            
+            <div class="status-text" id="loaderStatus">Memuat sistem keamanan...</div>
+        </div>
+    </div>
+
+    <!-- MAIN PAGE CONTENT -->
+    <div id="main-wrapper">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                ZENVORA
+            </div>
+            <div class="status-badge" id="headerStatus">
+                <span class="status-dot"></span>
+                Admin Online
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <div class="hero-container">
+            <div class="hero-content hero">
+                <div class="animated-title">
+                    <span id="typing-text" class="typing-text"></span>
+                </div>
+                <p>Transaksi jual beli akun, item, dan jasa game online aman dan bebas penipuan.</p>
+                
+                <div class="badge-container">
+                    <span class="badge">
+                        <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                        Proses Cepat
+                    </span>
+                    <span class="badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4z"/></svg>
+                        Jaminan Aman
+                    </span>
+                    <span class="badge">
+                        <svg viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3-3c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                        All Games
+                    </span>
+                </div>
+            </div>
+
+            <!-- Wave SVG -->
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(248,250,252,0.7)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(248,250,252,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(248,250,252,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#f8fafc" />
+                </g>
+            </svg>
+        </div>
+
+        <!-- Main Container -->
+        <div class="container">
+
+            <!-- Alert Waspada Penipuan -->
+            <div class="alert-warning">
+                <svg class="alert-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                <div class="alert-text">
+                    <strong>Hati-hati Penipuan!</strong> Admin Zenvora tidak pernah chat kamu duluan dari nomor lain selain <strong>+62 877-6098-8797</strong>.
+                </div>
+            </div>
+
+            <!-- Card Statistik & Social Proof -->
+            <div class="card">
+                <h2>
+                    <svg class="icon-title" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    Statistik & Kepercayaan
+                </h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Transaksi Sukses</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Jaminan Safe</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4.9 / 5</div>
+                        <div class="stat-label">Rating User</div>
+                    </div>
+                </div>
+                <div class="trust-badge-box">
+                    <div class="trust-left">
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <div class="trust-subtext">Verified Rekber</div>
+                </div>
+            </div>
+
+            <!-- Card Jam Operasional -->
+            <div class="card">
+                <h2>
+                    <svg class="icon-title" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    Jam Operasional Layanan
+                </h2>
+                <div class="operational-box">
+                    <div class="op-row">
+                        <span class="op-day">Senin - Jumat</span>
+                        <span class="op-time">08.00 - 23.00 WIB</span>
+                    </div>
+                    <div class="op-row">
+                        <span class="op-day">Sabtu - Minggu</span>
+                        <span class="op-time">09.00 - 00.00 WIB</span>
+                    </div>
+                    <div class="op-row">
+                        <span class="op-day">Pengisian Form</span>
+                        <span class="op-time">24 Jam (Diproses jam kerja)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Transaksi & Salin Format -->
+            <div class="card">
+                <h2>
+                    <svg class="icon-title" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                    Form Transaksi Baru
+                </h2>
+                <form id="rekberForm">
+                    <div class="form-group">
+                        <label>Pilih Game / Jasa:</label>
+                        <select id="game" required>
+                            <option value="">-- Pilih Game --</option>
+                            <option value="Mobile Legends">Mobile Legends</option>
+                            <option value="Free Fire">Free Fire</option>
+                            <option value="PUBG Mobile">PUBG Mobile</option>
+                            <option value="Genshin Impact / Honkai">Genshin Impact / Honkai</option>
+                            <option value="Roblox">Roblox</option>
+                            <option value="Valorant">Valorant</option>
+                            <option value="Lainnya">Game Lainnya</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nomor WhatsApp Penjual:</label>
+                        <input type="tel" id="waPenjual" placeholder="Contoh: 08123456789" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nomor WhatsApp Pembeli:</label>
+                        <input type="tel" id="waPembeli" placeholder="Contoh: 08987654321" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nominal Transaksi (Rp):</label>
+                        <input type="text" id="nominalTx" placeholder="Contoh: 250.000" oninput="formatNumberInput(this)" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Detail Singkat Transaksi:</label>
+                        <input type="text" id="detail" placeholder="Contoh: Akun ML Monsep Skin 100+" required>
+                    </div>
+                    <button type="submit" class="btn">
+                        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                        Proses Transaksi via WA Admin
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="copyFormatTeks()">
+                        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                        Salin Format Teks Manual
+                    </button>
+                </form>
+            </div>
+
+            <!-- Calculator & Tabel Rincian Fee Admin -->
+            <div class="card">
+                <h2>
+                    <svg class="icon-title" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1.5 14h-11v-2h11v2zm0-4h-11v-2h11v2zm0-4h-11V7h11v2z"/></svg>
+                    Kalkulator & Tabel Fee Admin
+                </h2>
+                <div class="form-group">
+                    <label for="nominal">Kalkulator Fee Otomatis (Rp):</label>
+                    <input type="text" id="nominal" placeholder="Contoh: 20.000" oninput="formatAndCalculate(this)">
+                </div>
+                <div class="result-box" id="hasilFee">
+                    Estimasi Biaya Rekber: Rp 0
+                </div>
+
+                <table class="fee-table">
+                    <thead>
+                        <tr>
+                            <th>Nominal Transaksi</th>
+                            <th>Biaya (Fee)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Rp 1 - Rp 50.000</td>
+                            <td>Rp 3.000</td>
+                        </tr>
+                        <tr>
+                            <td>Rp 50.001 - Rp 200.000</td>
+                            <td>Rp 5.000</td>
+                        </tr>
+                        <tr>
+                            <td>Rp 200.001 - Rp 500.000</td>
+                            <td>Rp 10.000</td>
+                        </tr>
+                        <tr>
+                            <td>Rp 500.001 - Rp 1.000.000</td>
+                            <td>Rp 15.000</td>
+                        </tr>
+                        <tr>
+                            <td>> Rp 1.000.000</td>
+                            <td>2% dari Nominal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Step Section -->
+            <div class="card">
+                <h2>
+                    <svg class="icon-title" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    Alur Transaksi Zenvora
+                </h2>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div>Lengkapi formulir transaksi di atas dan klik tombol kirim.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div>Admin akan membuatkan grup WhatsApp resmi (Penjual, Pembeli, & Admin).</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div>Pembeli melakukan pendaftaran/pembayaran ke rekening resmi Zenvora.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">4</div>
+                        <div>Penjual menyerahkan data akun/item ke pembeli untuk diamankan.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">5</div>
+                        <div>Setelah transaksi terkonfirmasi aman, dana diteruskan ke penjual.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="card">
+                <h2>
+                    <svg class="icon-title" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    Pertanyaan Umum (FAQ)
+                </h2>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Berapa lama proses transaksi rekber?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Proses transaksi biasanya memakan waktu sekitar 10-30 menit tergantung pada kecepatan amannya data akun/item antara penjual dan pembeli.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Siapa yang membayar biaya (fee) admin?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Biaya admin disepakati oleh kedua belah pihak. Bisa ditanggung oleh pembeli, penjual, atau dibagi dua sesuai kesepakatan di grup.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Bagaimana jika transaksi dibatalkan?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Jika pembatalan disebabkan oleh ketidaksesuaian data akun/item penjual, dana pembeli akan dikembalikan utuh (refund) sesuai kebijakan Zenvora.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            &copy; 2026 Zenvora Rekber. All Rights Reserved.
+        </footer>
+    </div>
+
+    <script>
+        // Smooth SVG Ring Preloader Script
+        window.addEventListener("DOMContentLoaded", () => {
+            const preloader = document.getElementById("preloader");
+            const mainWrapper = document.getElementById("main-wrapper");
+            const loaderPercent = document.getElementById("loaderPercent");
+            const progressRing = document.getElementById("progressRing");
+            const loaderStatus = document.getElementById("loaderStatus");
+
+            const circumference = 2 * Math.PI * 42;
+            progressRing.style.strokeDasharray = `${circumference} ${circumference}`;
+            progressRing.style.strokeDashoffset = circumference;
+
+            let currentVal = 0;
+            const targetVal = 100;
+            const duration = 1800; 
+            const startTime = performance.now();
+
+            const statusTexts = [
+                { threshold: 0, text: "Memuat sistem keamanan..." },
+                { threshold: 35, text: "Menyiapkan kalkulator rekber..." },
+                { threshold: 70, text: "Memverifikasi koneksi admin..." },
+                { threshold: 95, text: "Halaman siap!" }
+            ];
+
+            function updateLoader(timestamp) {
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                const easeProgress = 1 - Math.pow(1 - progress, 3);
+                currentVal = Math.floor(easeProgress * targetVal);
+
+                loaderPercent.textContent = currentVal;
+
+                const offset = circumference - (easeProgress * circumference);
+                progressRing.style.strokeDashoffset = offset;
+
+                for (let i = statusTexts.length - 1; i >= 0; i--) {
+                    if (currentVal >= statusTexts[i].threshold) {
+                        loaderStatus.textContent = statusTexts[i].text;
+                        break;
+                    }
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateLoader);
+                } else {
+                    setTimeout(() => {
+                        preloader.classList.add("hide");
+                        mainWrapper.classList.add("visible");
+                    }, 250);
+                }
+            }
+
+            requestAnimationFrame(updateLoader);
+        });
+
+        const NOMOR_WA_ADMIN = "6287760988797"; 
+
+        const texts = [
+            "Rekber All Game Terpercaya",
+            "Transaksi Safe & Tanpa Risk",
+            "Layanan Rekber Zenvora"
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById("typing-text");
+
+        function typeEffect() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            typeEffect();
+        });
+
+        document.addEventListener('touchmove', function (event) {
+            if (event.scale !== 1 && event.scale !== undefined) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+
+        // Fungsi Format Angka
+        function formatNumberInput(input) {
+            let value = input.value.replace(/\D/g, '');
+            if (value === "") {
+                input.value = "";
+                return;
+            }
+            input.value = new Intl.NumberFormat('id-ID').format(value);
+        }
+
+        // Fungsi Kalkulator Fee
+        function formatAndCalculate(input) {
+            let value = input.value.replace(/\D/g, '');
+            
+            if (value === "") {
+                input.value = "";
+                document.getElementById('hasilFee').innerText = "Estimasi Biaya Rekber: Rp 0";
+                return;
+            }
+
+            input.value = new Intl.NumberFormat('id-ID').format(value);
+
+            let nominal = parseInt(value) || 0;
+            let fee = 0;
+
+            if (nominal > 0) {
+                if (nominal <= 50000) {
+                    fee = 3000;
+                } else if (nominal <= 200000) {
+                    fee = 5000;
+                } else if (nominal <= 500000) {
+                    fee = 10000;
+                } else if (nominal <= 1000000) {
+                    fee = 15000;
+                } else {
+                    fee = Math.round(nominal * 0.02);
+                }
+            }
+
+            document.getElementById('hasilFee').innerText = "Estimasi Biaya Rekber: Rp " + fee.toLocaleString('id-ID');
+        }
+
+        // Submit Form
+        document.getElementById('rekberForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let game = document.getElementById('game').value;
+            let waPenjual = document.getElementById('waPenjual').value;
+            let waPembeli = document.getElementById('waPembeli').value;
+            let rawNominal = document.getElementById('nominalTx').value.replace(/\D/g, '');
+            let formattedNominal = parseInt(rawNominal || 0).toLocaleString('id-ID');
+            let detail = document.getElementById('detail').value;
+
+            let pesan = `Halo Admin Zenvora, saya ingin membuat transaksi Rekber.%0A%0A` +
+                        `*Game:* ${game}%0A` +
+                        `*WA Penjual:* ${waPenjual}%0A` +
+                        `*WA Pembeli:* ${waPembeli}%0A` +
+                        `*Nominal:* Rp ${formattedNominal}%0A` +
+                        `*Detail:* ${detail}%0A%0A` +
+                        `Mohon buatkan grup transaksinya. Terima kasih!`;
+
+            let url = `https://wa.me/${NOMOR_WA_ADMIN}?text=${pesan}`;
+            window.open(url, '_blank');
+        });
+
+        // Copy Format
+        function copyFormatTeks() {
+            let game = document.getElementById('game').value || '-';
+            let waPenjual = document.getElementById('waPenjual').value || '-';
+            let waPembeli = document.getElementById('waPembeli').value || '-';
+            let rawNominal = document.getElementById('nominalTx').value.replace(/\D/g, '');
+            let formattedNominal = rawNominal ? "Rp " + parseInt(rawNominal).toLocaleString('id-ID') : '-';
+            let detail = document.getElementById('detail').value || '-';
+
+            let format = `*FORMAT TRANSAKSI REKBER ZENVORA*\n\n` +
+                         `• Game / Jasa: ${game}\n` +
+                         `• WA Penjual: ${waPenjual}\n` +
+                         `• WA Pembeli: ${waPembeli}\n` +
+                         `• Nominal: ${formattedNominal}\n` +
+                         `• Detail Transaksi: ${detail}`;
+
+            navigator.clipboard.writeText(format).then(() => {
+                alert("Format transaksi berhasil disalin ke clipboard!");
+            }).catch(err => {
+                alert("Gagal menyalin format otomatis.");
+            });
+        }
+
+        // Toggle Accordion FAQ
+        function toggleFaq(button) {
+            const faqItem = button.parentElement;
+            faqItem.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
